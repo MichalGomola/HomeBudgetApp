@@ -1,0 +1,61 @@
+.layout {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 200px 200px 4fr 200px;
+    gap: 20px 10px;
+    grid-template-areas:
+    ". header header ."
+    ". nav nav ."
+    ". aside section ."
+    ". footer footer .";
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #f5f5f5;
+}
+
+.nav * {
+    width: 200px;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: #f5f5f5;
+}
+
+.aside * {
+    width: 200px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 30);
+}
+
+.btn {
+    transition: all 0.5s ease-in-out;
+}
+
+.aside .btn-container {
+    margin-bottom: 10px;
+}
+
+.section{
+    grid-area: section;
+}
+
+.footer {
+    height: 100px;
+    grid-area: footer;
+    background-color: #f5f5f5;
+}
+
+
+
+
