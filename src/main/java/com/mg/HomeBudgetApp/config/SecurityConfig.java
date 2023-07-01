@@ -28,19 +28,21 @@ public class SecurityConfig {
     public SecurityFilterChain matchersFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authz) ->
-                        authz
-                                .requestMatchers("/styles.css", "/login", "/")
-                                .permitAll()
-                                .anyRequest()
-                                .authenticated())
-                .formLogin(form -> form
+                    authz
+                        .requestMatchers("/styles.css", "/login", "/")
+                        .permitAll()
+                        .anyRequest()
+                        .authenticated())
+                .formLogin(form ->
+                    form
                         .failureUrl("/login")
                         .successForwardUrl("/"))
-                        .logout(logout -> logout
-                                .logoutUrl("/logout")
-                                .invalidateHttpSession(true)
-                                .deleteCookies("JSESSIONID")
-                                .logoutSuccessUrl("/")
+                .logout(logout ->
+                    logout
+                        .logoutUrl("/logout")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                        .logoutSuccessUrl("/")
 
         );
         return http.build();
