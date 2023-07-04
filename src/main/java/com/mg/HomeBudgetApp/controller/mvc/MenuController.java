@@ -1,10 +1,10 @@
 package com.mg.HomeBudgetApp.controller.mvc;
 
+import static com.mg.HomeBudgetApp.commons.ControllerConstants.*;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,9 +15,9 @@ public class MenuController {
     public String getIndex() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if ((authentication instanceof AnonymousAuthenticationToken)) {
-            return "index";
+            return INDEX;
         } else {
-            return "index";
+            return INDEX;
         }
     }
 }
